@@ -1,0 +1,15 @@
+#!/bin/python
+
+import sys
+
+def lonely_integer(a):
+    lonelyInteger = a[0]
+    for i in range(len(a)):
+        if a.count(a[i]) == 1:
+            lonelyInteger = a[i]
+    return lonelyInteger
+        
+    
+n = int(raw_input().strip())
+a = map(int,raw_input().strip().split(' '))
+print lonely_integer(a)
