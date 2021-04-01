@@ -1,5 +1,9 @@
 import numpy
-arr= numpy.array(map(float, raw_input().split()))
-print arr[::-1]                                     # reverse an array
 
-            
+def arrays(arr):
+    # complete this function
+    # use numpy.array
+    return(numpy.array(arr[::-1], float))                       
+arr = input().strip().split(' ')
+result = arrays(arr)
+print(result)
