@@ -1,21 +1,24 @@
-#!/bin/python
+
+def hourglasssum(matrix, row, col):
+    a = []
+    sum = 0
+    sum+=matrix[row-1][col-1]
+    sum+=matrix[row-1][col]
+    sum+=matrix[row-1][col+1]
+    sum+=matrix[row][col]
+    sum+=matrix[row+1][col-1]
+    sum+=matrix[row+1][col]
+    sum+=matrix[row+1][col+1]
+    return sum
+
 arr = []
-maxVal=-9999
-for arr_i in xrange(6):
-    arr_temp = map(int,raw_input().split(' '))
-    arr.append(arr_temp)
+for i in range(6):
+    arr.append(list(map(int,input().split())))
 
-#print arr
-
-for i in range(0,4):
-    for j in range(0,4):
-        firstRow = arr[i][j]+arr[i][j+1]+arr[i][j+2]
-        thirdRow=  arr[i+2][j]+arr[i+2][j+1]+arr[i+2][j+2]
-        secondRow= arr[i+1][j+1]
-        total=firstRow+secondRow+thirdRow
-        print "total = "+ str(total)
-        maxVal=max(maxVal,total)
-        print "maxVal= "+ str(maxVal)
-
-print maxVal
-
+max_sum = -63
+for i in range(1,5):
+    for j in range(1,5):
+        current_sum = hourglasssum(arr,i,j)
+        if current_sum > max_sum:
+            max_sum = current_sum
+print(max_sum)
