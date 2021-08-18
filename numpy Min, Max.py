@@ -1,5 +1,4 @@
-import numpy
-N,M = map(int, raw_input().split())
-array= numpy.array( [map(int, raw_input().split()) for i in range(N)])
-Min= numpy.min(array, axis=1)
-print numpy.max(Min)
+import numpy as np
+n, m = map(int, input().split())
+print(np.max(np.min(np.array([input().split() for _ in range(n)],int), axis = 1)))
+
