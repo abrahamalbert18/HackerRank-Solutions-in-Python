@@ -7,3 +7,4 @@ def depth(elem, level):
         
     for child in elem:
         depth(child, level + 1)
+    return maxdepth
