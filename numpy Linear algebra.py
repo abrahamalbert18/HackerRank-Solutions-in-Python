@@ -1,7 +1,3 @@
-import numpy
-N= input()
-arr= numpy.array( [(map(float, raw_input().split())) for i in range(N)])
-print numpy.linalg.det(arr)    #computes the determinent value of a matrix
-
-#numpy.linalg.eig(array)   --- computes the eigen values of the matrix
-#numpy.linalg.inv(array)   --- computes the inverse of a matrix
+import numpy as np
+A = np.array([input().split() for _ in range(int(input()))], float)
+print(round(np.linalg.det(A),2))
